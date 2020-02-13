@@ -34,7 +34,7 @@ svg.handsrc=(o,k,v)=>{
  if(!svg.buf[k])return console.log('id notfound',k,v)
  return svg.buf[k].src=v||svg._src,o[k]=v
 }
-svg._src=``
+svg._src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQI12NgYAAAAAMAASDVlMcAAAAASUVORK5CYII="
 svg.buf={}
 svg.cls=new Proxy({},svg.handcls)
 svg.txt=new Proxy({},svg.handtxt)
