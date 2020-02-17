@@ -1,6 +1,8 @@
 ;(function(root){
  let fn={}
  fn.gi=(d)=>document.getElementById(d)
+ //document.setAttributeNS("http://www.w3.org/2000/svg", "align", "center"); 
+ 
  ;
  let svg={}
  svg.handcls=(o,k,v)=>{
@@ -31,7 +33,16 @@
  svg.cls=new Proxy({},{set:svg.handcls})
  svg.txt=new Proxy({},{set:svg.handtxt})
  svg.src=new Proxy({},{set:svg.handsrc})
-
+ //
+ svg.init=((w,h,query)=>{
+  query=query||'svg'
+  let el=fn.q(query)
+  el.setAttributeNS("http://www.w3.org/2000/svg", "width",w); 
+  el.setAttributeNS("http://www.w3.org/2000/svg", "height",h);
+  svg.el=el
+ })
+ //
+ 
  root.svg=svg
 /*usage
 svg.txt.xyz='bbbbb'
